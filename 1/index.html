@@ -1,11 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoSurf50 - 1</title>
-</head>
-<body>
-    <h1>GoSSurf50-1</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoSurf50_1</title>
+    <style>
+      :root {
+        --bg: #000000;
+        --accent: #d40000;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg);
+        overflow: hidden;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+      }
+
+      img {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="checkerImage" alt="Fully Flattened True Geometry Swirl Checkerboard" />
+
+    <script>
+      const img = document.getElementById('checkerImage');
+
+      const minGap = 20;
+      const maxGap = 70;
+      let currentSvgMarkup = '';
+
+      const shapePath = `M182.9,64.3c-1.1,1.5-2.7,4.4-3.2,4.2c-3.2-1.1-6.5-2.4-9-4.6c-6.4-5.5-12.9-10.8-20.2-15.1c-14-8.2-28.3-14.7-45.1-14C101.6,35,97.8,34,94,33.9c-15.4-0.2-28,6.4-38.9,16.8c-7.9,7.5-11.2,17.5-14,27.7c-1.3,4.7-3.1,9.3-3.9,14c-1.5,8.8,1.2,17.2,4,25.3c3.2,9.7,6.8,19.2,13.6,27.1c7,8.1,15.9,12.7,26.4,14.1c9.3,1.3,18.6,3.9,27.9,3.6c7.8-0.2,15.9-2.8,23.1-6.1s13.7-8.5,20-13.4c8-6.2,11.3-14.8,13.2-24.7c1.7-8.9-2-16.3-3.9-24.4c-3.9-16.9-18-20.4-31-25.9c-13.5-5.8-25.2-1.1-37.5,3.7c-8.9,3.5-15.5,9.3-20.8,16.5c-2.4,3.3-3.5,8.1-3.7,12.4c-0.6,9.5,1,18.9,5.7,27.3c5,8.9,25.2,22,38.4,16.9c2.7-1,5.8-1.2,8.6-2c9-2.6,12.2-10,13.4-17.9c0.9-5.7,1.5-12.3-0.6-17.4c-4.6-11-23.9-19.8-36.2-9.1c-1.8,1.6-2.4,5-2.8,7.7c-0.2,1.4,0.9,3.1,1.6,4.6c4,8.3,4.5,8.3,11.2,2.2c1.9-1.7,4.8-2.8,7.3-3.3c1.3-0.3,3.9,0.8,4.4,1.9c1.6,3.8,6.9,6.9,2.9,11.8c-4.3,5.3-10.1,8.2-16.9,9.4c-6.9,1.2-16.1-6.8-19.8-14.7c-8.5-17.7,3.5-31.4,16.2-35.9c7-2.5,15.8-0.4,23.6,0.6c4.4,0.6,8.7,2.8,12.8,4.7c6.3,2.9,11.8,14.1,11.9,21.2c0.1,6.8-1.3,13.2-4,19.2c-4.9,10.9-13.6,18.1-24.3,22.8c-6.4,2.8-13.3,4.5-20.2,6c-2.7,0.6-6-0.1-8.8-0.9c-6.1-1.8-12.2-3.6-17.9-6.3c-3.1-1.5-5.5-4.6-7.8-7.4c-3.6-4.5-6.6-9.4-10.2-13.9c-4-5-5.5-10.6-5.9-16.9c-0.3-3.9-3-7.8-2.7-11.6c1.3-17.2,7.3-32.5,23.1-41.4c6.9-3.9,15-6,23.4-5.3c4.2,0.3,8.6-0.6,12.8-0.3c6.7,0.5,13.6,0.9,20.1,2.6c13.7,3.6,27.6,7,35.2,21.2c2.4,4.6,6.1,8.5,8.7,13c1.5,2.6,1.7,5.8,2.6,8.8c3.4,11.2,0.7,22.2-1.4,33.2c-1.8,9.2-8.2,15.4-13.8,22.4c-9.1,11.5-21.2,17.3-34.4,21.2c-17.8,5.3-35.4,4.3-53.1-1.9c-9.3-3.3-17.6-8-25.6-13.3c-4.3-2.9-7.5-7.4-10.9-11.5c-10.2-12.3-13.5-27.4-16.3-42.7c-0.2-1.1-0.9-2-1.4-3s-1.6-2.1-1.5-3c2-11.4-0.3-23.9,6.5-34.2c5.3-8,10.9-16,17.7-22.5S55,30.8,63.4,26.7c7.3-3.6,15.9-5.7,24-6.5c9.8-1,19.7-0.3,29.6,0.5c12.1,0.9,22.1,7.8,32.3,13.5c9.1,5.1,17.7,11.3,25.9,17.8c3.8,3,6,7.8,9,11.8C183.8,63.8,183.4,64,182.9,64.3L182.9,64.3z`;
+
+      function buildSvgMarkup() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+
+        const xCoords = [0];
+        while (xCoords[xCoords.length - 1] < w) {
+          const gap = Math.floor(Math.random() * (maxGap - minGap + 1)) + minGap;
+          xCoords.push(xCoords[xCoords.length - 1] + gap);
+        }
+        xCoords[xCoords.length - 1] = w;
+
+        const yCoords = [0];
+        while (yCoords[yCoords.length - 1] < h) {
+          const gap = Math.floor(Math.random() * (maxGap - minGap + 1)) + minGap;
+          yCoords.push(yCoords[yCoords.length - 1] + gap);
+        }
+        yCoords[yCoords.length - 1] = h;
+
+        let checkerRed = '';
+        let checkerBlack = '';
+
+        for (let i = 0; i < xCoords.length - 1; i++) {
+          for (let j = 0; j < yCoords.length - 1; j++) {
+            const x1 = xCoords[i];
+            const x2 = xCoords[i + 1];
+            const y1 = yCoords[j];
+            const y2 = yCoords[j + 1];
+            const rectStr = `M ${x1} ${y1} H ${x2} V ${y2} H ${x1} Z `;
+
+            if ((i + j) % 2 === 0) {
+              checkerRed += rectStr;
+            } else {
+              checkerBlack += rectStr;
+            }
+          }
+        }
+
+        let swirls = '';
+        const numSwirls = 3;
+
+        for (let k = 0; k < numSwirls; k++) {
+          const posX = Math.random() * w;
+          const posY = Math.random() * h;
+          const sizeFactor = 0.5 + Math.random() * 0.4;
+          const targetSize = Math.min(w, h) * sizeFactor;
+          const scale = (targetSize / 200).toFixed(4);
+          const rotation = Math.random() * 360;
+          const transformAttr = `translate(${posX.toFixed(1)}, ${posY.toFixed(1)}) scale(${scale}) rotate(${rotation.toFixed(1)}, 100, 100)`;
+          swirls += `<path transform="${transformAttr}" d="${shapePath}" />`;
+        }
+
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+  <defs>
+    <mask id="swirlCutout" maskUnits="userSpaceOnUse">
+      <rect width="${w}" height="${h}" fill="#ffffff"/>
+      <g fill="#000000">${swirls}</g>
+    </mask>
+    <mask id="swirlOnly" maskUnits="userSpaceOnUse">
+      <rect width="${w}" height="${h}" fill="#000000"/>
+      <g fill="#ffffff">${swirls}</g>
+    </mask>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#000000"/>
+  <g>
+    <path d="${checkerRed}" fill="#d40000" mask="url(#swirlCutout)"/>
+    <path d="${checkerBlack}" fill="#000000" mask="url(#swirlCutout)"/>
+    <path d="${checkerBlack}" fill="#d40000" mask="url(#swirlOnly)"/>
+    <path d="${checkerRed}" fill="#000000" mask="url(#swirlOnly)"/>
+    <g fill="none" stroke="none">${swirls}</g>
+  </g>
+</svg>`;
+      }
+
+      function drawDividedComposition() {
+        currentSvgMarkup = buildSvgMarkup();
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(currentSvgMarkup);
+      }
+
+      drawDividedComposition();
+      window.addEventListener('resize', drawDividedComposition);
+    </script>
+  </body>
 </html>
